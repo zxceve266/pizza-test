@@ -23,8 +23,8 @@ export default {
             if( this.currentUser === null ){
                 next()
             }else{
-                if(confirm('你會被登出，確定繼續嗎?') === true){
-                    this.signOut()
+                if(confirm('你會被登出，確定繼續嗎?') == true){
+                    this.$store.dispatch('signOut')
                     next()
                 }else{
                     next(false)
