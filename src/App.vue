@@ -18,6 +18,7 @@ import { dbMenuRef } from './firebase'
         appHeader:Header,
       },
       created(){
+        this.$store.commit('Loading')
         this.$store.dispatch('setMenuRef')
         this.$store.dispatch('setOrderRef')
       }

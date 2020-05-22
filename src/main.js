@@ -4,6 +4,10 @@ import router from './router/router'
 import store from './store/store'
 import Accounting from 'accounting-js'//導入會計插件
 
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
+Vue.component('Loading',Loading)
+
 Vue.config.productionTip = false
 Vue.filter('currency',val => { //轉換浮點數
   return Accounting.formatMoney(val)

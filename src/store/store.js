@@ -6,16 +6,18 @@ import Vuex from 'vuex'
 import menu from './modules/menu'
 import orders from './modules/orders'
 import users from './modules/users'
+import isLoading from './modules/isLoading'
 import { vuexfireMutations } from 'vuexfire'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-
-  mutations: vuexfireMutations,
+  mutations:vuexfireMutations,
 
   modules: {
     menu,
     orders,
-    users
+    users,
+    isLoading
   }
 })

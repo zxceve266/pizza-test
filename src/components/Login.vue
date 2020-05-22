@@ -20,8 +20,8 @@ import store from '../store/store'
     export default {
         data(){
             return{
-                email:"",
-                password:""
+                email:"zzz@ccc.com",
+                password:"123456"
             }
         },
         methods:{

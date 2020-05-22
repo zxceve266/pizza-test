@@ -47,6 +47,7 @@
                 {{basketText}}
             </div>
         </div>
+        <loading :active.sync="isLoading"></loading>
     </div>
 </template>
 
@@ -62,7 +63,8 @@ import store from '../store/store'
         },
         computed:{
             ...mapGetters([
-                'getMenuItems'
+                'getMenuItems',
+                'isLoading'
             ]),
             total(){
                 let totalCost = 0
@@ -99,11 +101,12 @@ import store from '../store/store'
                 }
             },
             addNewOrder(){
+                
                 const order ={
                     pizza:{...this.basket},//因為是陣列要解構在Object
                     createdAt: new Date()
                 }
-                store.dispatch('addNewOrder',order)
+                this.$store.commit('NotLoading')
                 this.basket = []
                 this.basketText = '謝謝你的購買'
             }
